@@ -1,21 +1,16 @@
 public class Employee extends Person {
+    private String position;
+    private double salary;
     public Employee(){
         super();
     }
-    public Employee(String name, String surname){
+    public Employee(String name, String surname, String position, double salary){
         this();
         setName(name);
         setSurname(surname);
+        setPosition(position);
+        setSalary(salary);
     }
-
-    @Override
-    public String getPosition() {
-        return Position;
-    }
-
-    private String Position;
-    private double salary;
-
     public double getSalary() {
         return salary;
     }
@@ -23,16 +18,14 @@ public class Employee extends Person {
     public void setSalary(double salary) {
         this.salary = salary;
     }
-
-    public void setPosition(String position) {
-        Position = position;
+    public String getPosition(){
+        return position;
     }
-
+    public void setPosition(String position) {
+        this.position = position;
+    }
     @Override
     public String toString() {
-        return "Employee{" +
-                "Position='" + Position + '\'' +
-                ", salary=" + salary +
-                '}';
+        return "Employee: " + super.toString();
     }
 }
