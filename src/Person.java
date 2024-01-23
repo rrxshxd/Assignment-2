@@ -1,4 +1,5 @@
-public abstract class Person {
+import Interfaces.Payable;
+public abstract class Person implements Payable, Comparable<Person> {
     private static int id_gen = 1;
     private int id;
     private String name;
@@ -36,5 +37,13 @@ public abstract class Person {
     public String toString() {
         return id +
                 "." + name + " " + surname;
+    }
+    public double getPaymentAmount(){
+        return 0.00;
+    }
+
+    @Override
+    public int compareTo(Person otherPerson) {
+        return Double.compare(this.getPaymentAmount(),otherPerson.getPaymentAmount());
     }
 }
